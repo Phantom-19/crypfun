@@ -139,9 +139,11 @@ def Menu():
     print("\033[1;97m╔"+37*"═"+1*"═╗")
     print("\033[1;97m║ \033[1;91m[\033[1;96m1.\033[1;91m]\033[38;5;214m Cryptage Hacker                 \033[1;97m║")
     print("\033[1;97m║ \033[1;91m[\033[1;96m2.\033[1;91m]\033[38;5;241m Decryptage Hacker               \033[1;97m║")
-    print("\033[1;97m║ \033[1;91m[\033[1;96m3.\033[1;91m]\033[38;5;121m Abonnez-vous à ma chaîne youtube\033[1;97m║") 
-    print("\033[1;97m║ \033[1;91m[\033[1;96m4.\033[1;91m]\033[38;5;136m Groupe Telegram N°1             \033[1;97m║") 
-    print("\033[1;97m║ \033[1;91m[\033[1;96m5.\033[1;91m]\033[38;5;125m Groupe Telegram N°2             \033[1;97m║") 
+    print("\033[1;97m║ \033[1;91m[\033[1;96m3.\033[1;91m]\033[38;5;214m Cryptage Hacker                 \033[1;97m║")
+    print("\033[1;97m║ \033[1;91m[\033[1;96m4.\033[1;91m]\033[38;5;241m Decryptage Hacker               \033[1;97m║")
+    print("\033[1;97m║ \033[1;91m[\033[1;96m5.\033[1;91m]\033[38;5;121m Abonnez-vous à ma chaîne youtube\033[1;97m║") 
+    print("\033[1;97m║ \033[1;91m[\033[1;96m6.\033[1;91m]\033[38;5;136m Groupe Telegram N°1             \033[1;97m║") 
+    print("\033[1;97m║ \033[1;91m[\033[1;96m7.\033[1;91m]\033[38;5;125m Groupe Telegram N°2             \033[1;97m║") 
     print("\033[1;97m╚"+37*"═"+1*"═╝") 
     print("\033[1;97m║")
     choix_menu()
@@ -155,20 +157,24 @@ def choix_menu():
     elif dmd =="2":
         decryptage()
     elif dmd =="3":
+        cryptage_faxel()
+    elif dmd =="4":
+        decryptage_faxel()
+    elif dmd =="5":
         _cls()
         print(logo_youtube)
         mael("\033[1;91m[\033[1;93m!\033[1;91m]\033[1;96m Chaîne YouTube FASTER AXEL " )
         os.system('xdg-open https://www.youtube.com/c/FASTERAXEL?sub_confirmation=1')
         raw_input('\n\033[1;91m [\033[1;93m!\033[1;91m]\033[1;97m Appuyer entrer pour retourner au menu\033[1;93m...')
         Menu()
-    elif dmd =="4":
+    elif dmd =="6":
         _cls()
         print(logo_ach)
         mael("\033[1;91m[\033[1;93m!\033[1;91m]\033[1;96m Groupe Telegram A-C H ==TERMUX " )
         os.system('xdg-open https://t.me/Hacker_Termux1')
         raw_input('\n\033[1;91m [\033[1;93m!\033[1;91m]\033[1;97m Appuyer entrer pour retourner au menu...')
         Menu()
-    elif dmd =="5":
+    elif dmd =="7":
         _cls()
         print(logo_ndao)
         mael("\033[1;91m[\033[1;93m!\033[1;91m]\033[1;96m Groupe Telegram Top Hacking" )
@@ -187,9 +193,12 @@ Faxel_liste = list(string.ascii_letters) + nombres + char_speciaux
 def cryptage():
     _cls()
     print(logo)
-    Votre_message = raw_input("\033[1;33mMESSAGE \033[1;91m: \033[1;39m")
-    choix_nombre = eval(raw_input("\033[1;33m Choisir un nombre \033[1;91m[\033[1;96m1,2,3,4,5,6,7,8,9,0\033[1;91m] : \033[1;39m"))
-    emplacement = raw_input("\033[1;33m Nommer l'emplacement du resultat \033[1;91m: \033[1;39m")
+    print("\033[1;97m║")
+    Votre_message = raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m MESSAGE \033[1;97m═╬══\033[1;91m► \033[1;97m")
+    print("\033[1;97m║")
+    choix_nombre = eval(raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Choisir un nombre \033[1;91m[\033[1;96m1,2,3,4,5,6,7,8,9,0\033[1;91m] \033[1;97m═╬══\033[1;91m► \033[1;97m"))
+    print("\033[1;97m║")
+    emplacement = raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Nommer l'emplacement du resultat \033[1;97m═╬══\033[1;91m► \033[1;97m")
     code = ''
     def codage_message(message):
         faxel_h = Faxel_liste.index(message)
@@ -204,7 +213,7 @@ def cryptage():
          code += Faxel_liste[fichier_final]
          load("\033[1;91m[\033[1;92m@\033[1;91m]\033[38;5;245m Server\033[38;5;214m Faxel\033[38;5;241m...\033[48;5;0;38;5;192m")
     save = open(emplacement,"w")
-    save.write("#Toujours Faxel\n\n"+code)
+    save.write("#Toujours Faxel\n#Twitter : https://www.twitter.com/faxel2020\n"+code+"\n\n")
     save.close()
     raw_input('\n\033[1;91m[\033[1;97mRetour\033[1;91m]')
     Menu()
@@ -212,9 +221,12 @@ def cryptage():
 def decryptage():
     _cls()
     print(logo)
-    Votre_message = raw_input("\033[1;33m Entrer le texte a decrypter \033[1;91m: \033[1;39m")
-    choix_nombre = eval(raw_input("\033[1;33m Choisir un nombre \033[1;91m[\033[1;96m1,2,3,4,5,6,7,8,9,0\033[1;91m] : \033[1;39m"))
-    emplacement = raw_input("\033[1;33m Nommer l'emplacement du resultat \033[1;91m: \033[1;39m")
+    print("\033[1;97m║")
+    Votre_message = raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Entrer le texte a decrypter \033[1;97m═╬══\033[1;91m► \033[1;97m")
+    print("\033[1;97m║")
+    choix_nombre = eval(raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Choisir un nombre \033[1;91m[\033[1;96m1,2,3,4,5,6,7,8,9,0\033[1;91m] \033[1;97m═╬══\033[1;91m► \033[1;95m"))
+    print("\033[1;97m║")
+    emplacement = raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Nommer l'emplacement du resultat \033[1;97m═╬══\033[1;91m► \033[1;97m")
     message = ''
     for k in Votre_message:
       if k == ' ':
@@ -226,7 +238,7 @@ def decryptage():
          message += Faxel_liste[fichier_final]
          load("\033[1;91m[\033[1;92m@\033[1;91m]\033[38;5;245m Server\033[38;5;214m Faxel\033[38;5;241m...\033[48;5;0;38;5;192m")
     save = open(emplacement,"w")
-    save.write("#Toujours Faxel\n\n"+message)
+    save.write("#Toujours Faxel\n#Twitter : https://www.twitter.com/faxel2020\n"+message+"\n\n")
     save.close()
     raw_input('\n\033[1;91m[\033[1;97mRetour\033[1;91m]')
     Menu()
@@ -234,9 +246,12 @@ def decryptage():
 def cryptage_faxel():
     _cls()
     print(logo)
-    Votre_message = raw_input("\033[1;33m Saisissez votre script \033[1;91m: \033[1;39m")
-    choix_nombre = eval(raw_input("\033[1;33m Choisir un nombre \033[1;91m[\033[1;96m1,2,3,4,5,6,7,8,9,0\033[1;91m] : \033[1;39m"))
-    emplacement = raw_input("\033[1;33m Nommer l'emplacement du resultat \033[1;91m: \033[1;39m")
+    print("\033[1;97m║")
+    Votre_message = raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Saisissez votre script \033[1;97m═╬══\033[1;91m► \033[1;97m")
+    print("\033[1;97m║")
+    choix_nombre = eval(raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Choisir un nombre \033[1;91m[\033[1;96m1,2,3,4,5,6,7,8,9,0\033[1;91m] \033[1;97m═╬══\033[1;91m► \033[1;95m"))
+    print("\033[1;97m║")
+    emplacement = raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Nommer l'emplacement du resultat \033[1;97m═╬══\033[1;91m► \033[1;97m")
     ouverture = open(Votre_message, 'rb') 
     lecture = ouverture.read() 
     code = ''
@@ -251,7 +266,7 @@ def cryptage_faxel():
          fichier_final = codage_message(k)
          code += Faxel_liste[fichier_final]
     save = open(emplacement,"w")
-    save.write("#Toujours Faxel\n\n"+code)
+    save.write("#Toujours Faxel\n#Twitter : https://www.twitter.com/faxel2020\n"+code+"\n\n")
     save.close()
     raw_input('\n\033[1;91m[\033[1;97mRetour\033[1;91m]')
     Menu()
@@ -259,9 +274,12 @@ def cryptage_faxel():
 def decryptage_faxel():
     _cls()
     print(logo)
-    Votre_message = raw_input("\033[1;33m Saisissez votre script \033[1;91m: \033[1;39m")
-    choix_nombre = eval(raw_input("\033[1;33m Choisir un nombre \033[1;91m[\033[1;96m1,2,3,4,5,6,7,8,9,0\033[1;91m] : \033[1;39m"))
-    emplacement = raw_input("\033[1;33m Nommer l'emplacement du resultat \033[1;91m: \033[1;39m")
+    print("\033[1;97m║")
+    Votre_message = raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Saisissez votre script \033[1;97m═╬══\033[1;91m► \033[1;97m")
+    print("\033[1;97m║")
+    choix_nombre = eval(raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Choisir un nombre \033[1;91m[\033[1;96m1,2,3,4,5,6,7,8,9,0\033[1;91m] \033[1;97m═╬══\033[1;91m► \033[1;95m"))
+    print("\033[1;97m║")
+    emplacement = raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Nommer l'emplacement du resultat \033[1;97m═╬══\033[1;91m► \033[1;97m")
     ouverture = open(Votre_message, 'rb') 
     lecture = ouverture.read() 
     message = ''
@@ -273,7 +291,7 @@ def decryptage_faxel():
          fichier_final = (appel_req - choix_nombre)%(len(Faxel_liste) - 1)
          message += Faxel_liste[fichier_final]
     save = open(emplacement,"w")
-    save.write("#Toujours Faxel\n\n"+message)
+    save.write("#Toujours Faxel\n#Twitter : https://www.twitter.com/faxel2020\n"+message+"\n\n")
     save.close()
     raw_input('\n\033[1;91m[\033[1;97mRetour\033[1;91m]')
     Menu()
