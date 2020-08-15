@@ -199,6 +199,7 @@ def cryptage():
     choix_nombre = eval(raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Choisir un nombre \033[1;91m[\033[1;96m1,2,3,4,5,6,7,8,9,0\033[1;91m] \033[1;97m═╬══\033[1;91m► \033[1;97m"))
     print("\033[1;97m║")
     emplacement = raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Nommer l'emplacement du resultat \033[1;97m═╬══\033[1;91m► \033[1;97m")
+    load("\033[1;91m[\033[1;92m@\033[1;91m]\033[38;5;245m Server\033[38;5;214m Faxel\033[38;5;241m...\033[48;5;0;38;5;192m")
     code = ''
     def codage_message(message):
         faxel_h = Faxel_liste.index(message)
@@ -211,7 +212,6 @@ def cryptage():
       else:
          fichier_final = codage_message(k)
          code += Faxel_liste[fichier_final]
-         load("\033[1;91m[\033[1;92m@\033[1;91m]\033[38;5;245m Server\033[38;5;214m Faxel\033[38;5;241m...\033[48;5;0;38;5;192m")
     save = open(emplacement,"w")
     save.write("#Toujours Faxel\n#Twitter : https://www.twitter.com/faxel2020\n"+code+"\n\n")
     save.close()
@@ -227,6 +227,7 @@ def decryptage():
     choix_nombre = eval(raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Choisir un nombre \033[1;91m[\033[1;96m1,2,3,4,5,6,7,8,9,0\033[1;91m] \033[1;97m═╬══\033[1;91m► \033[1;95m"))
     print("\033[1;97m║")
     emplacement = raw_input("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Nommer l'emplacement du resultat \033[1;97m═╬══\033[1;91m► \033[1;97m")
+    load("\033[1;91m[\033[1;92m@\033[1;91m]\033[38;5;245m Server\033[38;5;214m Faxel\033[38;5;241m...\033[48;5;0;38;5;192m")
     message = ''
     for k in Votre_message:
       if k == ' ':
@@ -236,7 +237,6 @@ def decryptage():
          appel_req = Faxel_liste.index(k)
          fichier_final = (appel_req - choix_nombre)%(len(Faxel_liste) - 1)
          message += Faxel_liste[fichier_final]
-         load("\033[1;91m[\033[1;92m@\033[1;91m]\033[38;5;245m Server\033[38;5;214m Faxel\033[38;5;241m...\033[48;5;0;38;5;192m")
     save = open(emplacement,"w")
     save.write("#Toujours Faxel\n#Twitter : https://www.twitter.com/faxel2020\n"+message+"\n\n")
     save.close()
