@@ -139,8 +139,8 @@ def Menu():
     print("\033[1;97m╔"+37*"═"+1*"═╗")
     print("\033[1;97m║ \033[1;91m[\033[1;96m1.\033[1;91m]\033[38;5;214m Cryptage Hacker                 \033[1;97m║")
     print("\033[1;97m║ \033[1;91m[\033[1;96m2.\033[1;91m]\033[38;5;241m Decryptage Hacker               \033[1;97m║")
-    print("\033[1;97m║ \033[1;91m[\033[1;96m3.\033[1;91m]\033[38;5;214m Cryptage Hacker                 \033[1;97m║")
-    print("\033[1;97m║ \033[1;91m[\033[1;96m4.\033[1;91m]\033[38;5;241m Decryptage Hacker               \033[1;97m║")
+    print("\033[1;97m║ \033[1;91m[\033[1;96m3.\033[1;91m]\033[38;5;214m Cryptage script hacker          \033[1;97m║")
+    print("\033[1;97m║ \033[1;91m[\033[1;96m4.\033[1;91m]\033[38;5;241m Decryptage script hacker        \033[1;97m║")
     print("\033[1;97m║ \033[1;91m[\033[1;96m5.\033[1;91m]\033[38;5;121m Abonnez-vous à ma chaîne youtube\033[1;97m║") 
     print("\033[1;97m║ \033[1;91m[\033[1;96m6.\033[1;91m]\033[38;5;136m Groupe Telegram N°1             \033[1;97m║") 
     print("\033[1;97m║ \033[1;91m[\033[1;96m7.\033[1;91m]\033[38;5;125m Groupe Telegram N°2             \033[1;97m║") 
@@ -157,9 +157,9 @@ def choix_menu():
     elif dmd =="2":
         decryptage()
     elif dmd =="3":
-        cryptage_faxel()
+        _en_maintenance()
     elif dmd =="4":
-        decryptage_faxel()
+        _en_maintenance()
     elif dmd =="5":
         _cls()
         print(logo_youtube)
@@ -208,7 +208,6 @@ def cryptage():
     for k in Votre_message:
       if k == ' ':
          code += ' '
-         load("\033[1;91m[\033[1;92m@\033[1;91m]\033[38;5;245m Server\033[38;5;214m Faxel\033[38;5;241m...\033[48;5;0;38;5;192m")
       else:
          fichier_final = codage_message(k)
          code += Faxel_liste[fichier_final]
@@ -237,6 +236,7 @@ def decryptage():
          appel_req = Faxel_liste.index(k)
          fichier_final = (appel_req - choix_nombre)%(len(Faxel_liste) - 1)
          message += Faxel_liste[fichier_final]
+         load("\033[1;91m[\033[1;92m@\033[1;91m]\033[38;5;245m Server\033[38;5;214m Faxel\033[38;5;241m...\033[48;5;0;38;5;192m")
     save = open(emplacement,"w")
     save.write("#Toujours Faxel\n#Twitter : https://www.twitter.com/faxel2020\n"+message+"\n\n")
     save.close()
@@ -295,7 +295,17 @@ def decryptage_faxel():
     save.close()
     raw_input('\n\033[1;91m[\033[1;97mRetour\033[1;91m]')
     Menu()
-####################################################################################################    
+####################################################################################################
+def _en_maintenance():
+    _cls()
+    load("\033[1;91m[\033[1;92m@\033[1;91m]\033[38;5;245m Server\033[38;5;214m Faxel\033[38;5;241m...\033[48;5;0;38;5;192m")
+    time.sleep(6)
+    _cls()
+    print(logo)
+    print("\033[1;97m║")
+    mael("\033[1;97m╚═\033[1;31m▶\033[38;5;245m Cette option en maintenance,\033[1;92m merci\033[38;5;245m de bien vouloir revenir plus tard.")
+    raw_input('\n\033[1;91m[\033[1;97mRetour\033[1;91m]')
+    Menu()
 ####################################################################################################
 ####################################################################################################            
 if __name__ == '__main__':
